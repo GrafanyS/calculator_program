@@ -1,4 +1,4 @@
-from calculator_program.loger import data_recording
+from loger import data_recording
 
 
 var = input('Выберите с какими числами будете работать:\n1-Рациональные\n2-Комплексные\n')
