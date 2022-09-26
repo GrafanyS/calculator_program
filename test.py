@@ -1,4 +1,4 @@
-﻿import ui
+import ui
 
 
 def get_ints():
