@@ -74,9 +74,6 @@ def get_rational(expr_temp):
     print(f'Ответ: {res_chis}/{res_znam}') if res_chis<res_znam else \
         print(f'Ответ: {res_chis}/{res_znam} или {res_chis//res_znam} целых и {res_chis-(res_chis//res_znam)*res_znam}/{res_znam}')
 
-
-
-
-
+get_rational('1/2/3+2/1/2')
 
 
