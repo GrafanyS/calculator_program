@@ -14,6 +14,10 @@ logging.error("An ERROR")
 logging.critical("A message of CRITICAL severity")
 
 def data_recording(value_x, value_y, value_z, rezult):
+    '''
+    метод принимает значения x, y, z и результат вычисления
+    и записывает в файл .txt с указанием времени
+    '''
 
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
     with open('result.txt', 'a', encoding='utf-8') as file:
