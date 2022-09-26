@@ -1,3 +1,6 @@
+from calculator_program.loger import data_recording
+
+
 var = input('Выберите с какими числами будете работать:\n1-Рациональные\n2-Комплексные\n')
 
 if var == '1':
@@ -18,7 +21,8 @@ elif math_operation == '*':
     result = proiz(num_1, num_2)
 elif math_operation == '/':
     result = div(num_1, num_2)
-    
+
+data_recording(num_1, num_2, result)  
 
 
 
