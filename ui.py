@@ -4,6 +4,8 @@ import tkinter as tk
 from decimal import Decimal
 import logger
 import controller
+import sys
+from tkinter import *
 
 
 def change_mode(mode, entries):
