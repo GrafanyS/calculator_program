@@ -1,6 +1,3 @@
-import ui
-
-
 def get_ints():
     '''
     проверка на ввод числа
@@ -11,3 +8,7 @@ def get_ints():
             return num
         except ValueError:
             print('Ошибка. Ожидалось вещественное число.')
+
+
+
+# get_ints()
