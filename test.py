@@ -1,6 +1,3 @@
-import pwd
-from sre_parse import SPECIAL_CHARS
-from tkinter import *
 import logger
 def get_ints():
     '''
