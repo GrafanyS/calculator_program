@@ -3,20 +3,6 @@ import logging
 from time import time
 
 
-def data_recording(result):
-    '''
-    метод принимает значения и результат вычисления
-    и записывает в файл .log с указанием времени
-    '''
-
-    time = dt.now().strftime('%d-%b-%y %H:%M:%S')
-    with open('logger.log', 'a', encoding='utf-8') as file:
-        file.write(time + '\n')
-        file.writelines(f'результат вычисления = {result}\n')
-        file.write('======\n')
-
-# data_recording()
-
 def log(data, result):
     '''функция log  принимает значения и результат вычисления
     и записывает в файл .log с указанием времени'''
@@ -45,11 +31,10 @@ def logger():
     logger2.info(
         f"Тестирование пользовательского регистратора для модуля {__name__}...")
     logger2.warning(f"ПРЕДУПРЕЖДЕНИЕ {__name__}...")
-    logger2.error("ОШИБКА")
-    logger2.critical("Сообщение КРИТИЧЕСКОЙ серьезности\n")
+    logger2.error(f"ОШИБКА{__name__}...")
+    logger2.critical(f"Сообщение КРИТИЧЕСКОЙ серьезности{__name__}...\n")
 
 
 """ 
-Две функции логирования, принимают на вход один data_recording(result)
-или два парамета log(data, result).
+Две функции логирования.
 """
