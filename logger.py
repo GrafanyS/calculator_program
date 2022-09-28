@@ -12,7 +12,8 @@ def data_recording(result):
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
     with open('logger.log', 'a', encoding='utf-8') as file:
         file.write(time + '\n')
-        file.write(f'результат вычисления = {result}')
+        file.writelines(f'результат вычисления = {result}\n')
+        file.write('======\n')
 
 # data_recording()
 
@@ -20,10 +21,11 @@ def log(data, result):
     '''функция log  принимает значения и результат вычисления
     и записывает в файл .log с указанием времени'''
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
-    with open('logger.log', 'a') as file:
-        file.writelines(f'{time} : {data}  {result}\n')
+    with open('logger.log', 'a', encoding='utf-8') as file:
+        file.writelines(f'{time} : {data} {result}\n')
+        file.write('======\n')
     
-def logger(data, result):
+def logger():
     '''функция logger использование сандартной библиотеки logging '''
     logger2 = logging.getLogger(__name__)
 
@@ -45,3 +47,9 @@ def logger(data, result):
     logger2.warning(f"ПРЕДУПРЕЖДЕНИЕ {__name__}...")
     logger2.error("ОШИБКА")
     logger2.critical("Сообщение КРИТИЧЕСКОЙ серьезности\n")
+
+
+""" 
+Две функции логирования, принимают на вход один data_recording(result)
+или два парамета log(data, result).
+"""
