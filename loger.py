@@ -20,12 +20,17 @@ def data_recording(value_x, value_y, value_z, rezult):
     '''
 
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
-    with open('result.txt', 'a', encoding='utf-8') as file:
+    with open('result.txt', 'a', encoding='utf-8') as file:        
         file.write(time + '\n')
         file.write('\n' + f'{value_x} = value_x' + '\n')
         file.write(f'{value_y} = value_y' + '\n')
         file.write(f'"{value_z}" = value_z' + '\n')
-        file.write(f'результат вычисления = {rezult}')
+        file.write(f'результат вычисления = {rezult}\n')
+        file.write(f'==========\n')
 
 
-
+# result = 200
+# result1 = 200
+# result2 = 200
+# rezult = 600
+# data_recording(result, result1, result2, rezult)
