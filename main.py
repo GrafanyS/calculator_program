@@ -1,5 +1,4 @@
-import controller
+import ui
 
 # Точка входа
-controller.start()
-#controller.run()
+ui.start()
