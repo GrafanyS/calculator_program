@@ -2,8 +2,11 @@
 import math
 import tkinter as tk
 from decimal import Decimal
+from unittest import result
 import logger
 import controller
+import sys
+import test
 
 
 def change_mode(mode, entries):
@@ -26,7 +29,7 @@ def change_mode(mode, entries):
 def start():
     # Создание окна с задаными размерами и названием
     mainWindow = tk.Tk()
-    mainWindow.geometry('400x300')
+    mainWindow.geometry('500x400')
     mainWindow.title("Калькулятор")
     mainWindow.resizable(width=False, height=False)
 
@@ -50,7 +53,7 @@ def start():
     heading_label.place(relx=0.5, rely=0.28, anchor='n')
 
     entries = []  # Список текстовых полей
-    # РАЦИОНАЛЬНЫЕ ЧИСЛА
+    '''РАЦИОНАЛЬНЫЕ ЧИСЛА'''
     # Создание окна для ввода значения с позиционированием для первого числа
     first_entry_rac = tk.Entry(mainWindow, width=20)
     entries.append(first_entry_rac)
@@ -62,19 +65,19 @@ def start():
     entries.append(second_entry_rac)
     # Позиционирование окна ввода занчения
     second_entry_rac.place(relx=0.5, rely=0.37, anchor='n')
-
-    # КОМПЛЕКСНЫЕ ЧИСЛА
+    
+    '''КОМПЛЕКСНЫЕ ЧИСЛА'''
     # Создание окна для ввода значения с позиционированием для первого числа
     first_entry_re = tk.Entry(mainWindow, width=7)
     first_entry_im = tk.Entry(mainWindow, width=7)
-    first_entry_lable = tk.Label(mainWindow, text="+ i*")
+    first_entry_lable = tk.Label(mainWindow, text="+ j*")
     entries.append(first_entry_re)
     entries.append(first_entry_im)
     entries.append(first_entry_lable)
     # Создание окна для ввода значения с позиционированием для второго числа
     second_entry_re = tk.Entry(mainWindow, width=7)
     second_entry_im = tk.Entry(mainWindow, width=7)
-    second_entry_lable = tk.Label(mainWindow, text="+ i*")
+    second_entry_lable = tk.Label(mainWindow, text="+ j*")
     entries.append(second_entry_re)
     entries.append(second_entry_im)
     entries.append(second_entry_lable)
@@ -102,6 +105,7 @@ def start():
     divide_button = tk.Button(mainWindow, text="/",
                               command=lambda: send2('/', mode.get(), entries, result_label))
     divide_button.place(relx=0.58, rely=0.58, anchor='n')
+    
     # запуск функции sqrt () при нажатий кнопки
     sqrt_button = tk.Button(mainWindow, text="√",
                             command=lambda: send2('sqrt', mode.get(), entries, result_label))
@@ -112,6 +116,8 @@ def start():
     degree_button.place(relx=0.82, rely=0.58, anchor='n')
 
     mainWindow.mainloop()
+    test.test_division(second_entry_rac, first_entry_im)
+    test.get_ints(second_entry_rac)
 
 
 def send2(operation, mode, entries, result_label):
@@ -133,5 +139,17 @@ def send2(operation, mode, entries, result_label):
         if b == '':
             b = 0
         result = controller.run(operation, Decimal(a), Decimal(b))
+        
     # вывод результата на экран
     result_label.config(text="Ваш результат: " + str(result))
+
+
+    logger.logger(result)
+# start()
+
+'''
+подсмотрел и переработал под себя теперь стало понятно как работать с библиотекой
+tkinter, мало времени, попробую сделать кнопки ввода чисовых значений, 
+чтобы не надо было проверять на ввод.
+
+'''

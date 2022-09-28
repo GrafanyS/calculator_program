@@ -1,0 +1,5 @@
+DocifyPLUS==1.0.0
+Everything-Tkinter==0.2
+lambdaChaining==1.0.0
+tkinter-math==0.2.4
+tkinter-temps==1.0.3
