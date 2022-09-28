@@ -2,4 +2,4 @@ import controller
 
 # Точка входа
 controller.start()
-#controller.run()
+# controller.run()
