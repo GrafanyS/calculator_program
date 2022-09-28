@@ -1,3 +1,7 @@
+import pwd
+from sre_parse import SPECIAL_CHARS
+from tkinter import *
+import logger
 def get_ints():
     '''
     проверка на ввод числа
@@ -11,4 +15,13 @@ def get_ints():
 
 
 
-# get_ints()
+def test_division(x, y):
+    '''проверка деление на 0 '''
+    try:
+        x/y
+        logger.info(f"x/y успешный с результатом: {x/y}.")
+    except ZeroDivisionError as err:
+        logger.exception("Ошибка ZeroDivisionError")
+
+
+
