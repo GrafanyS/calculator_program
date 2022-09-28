@@ -6,6 +6,7 @@ import complex
 
 
 
+
 def button_add(value_x, value_y):
     rational.init(value_x, value_y)
     result = rational.add()
@@ -56,8 +57,8 @@ def run(choice, value_x, value_y):
             result = comand_dict[choice](value_x)
             text_log = f"{choice} {value_x} = "
 
-    logger.log(text_log, result)
-    logger.data_recording(result)
-    logger.logger()
-    
+    logger.log(text_log, result)       
     return result
+
+
+logger.logger()
